@@ -160,9 +160,7 @@ control MyComputeChecksum(inout headers  hdr, inout metadata meta) {
 control MyDeparser(packet_out packet, in headers hdr) {
     apply {
 		// parsed headers have to be added again into the packet
-        if (hdr.packetin.isValid()) {
-            packet.emit(hdr.packetin);
-        }
+        packet.emit(hdr.packetin);
 		packet.emit(hdr.ethernet);
 	}
 }

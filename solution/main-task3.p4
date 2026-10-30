@@ -204,7 +204,6 @@ control MyDeparser(packet_out packet, in headers hdr) {
     apply {
 		// parsed headers have to be added again into the packet
         packet.emit(hdr.packetin);
-        packet.emit(hdr.packetout);
 		packet.emit(hdr.ethernet);
 	}
 }
